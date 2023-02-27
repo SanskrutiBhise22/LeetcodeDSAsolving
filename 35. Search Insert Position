@@ -1,0 +1,27 @@
+class Solution {
+    public int searchInsert(int[] nums, int target) {
+        int c=0,s=0;
+        for(int i=0;i<nums.length;i++){
+            if(target==nums[i]){
+                 c++;
+                 s=i;
+                 break;
+            }
+        }
+        int max=target,m=0;
+        if(c==0){
+            for(int i=0;i<nums.length;i++){
+                if(max<nums[i]){
+                    m++;
+                    s=i;
+                    break;
+                }
+            }
+            if(m==0){
+                s=nums.length;
+            }
+        }
+        return s;
+
+    }
+}
